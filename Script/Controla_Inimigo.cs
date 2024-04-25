@@ -6,6 +6,8 @@ public class Controla_Inimigo : MonoBehaviour
 {
      Rigidbody2D rigidbody2D_inimigo;
     Transform transformInimigo;
+
+    public GameObject prefabDoObjeto;
     void Start()
     {
         transformInimigo = GetComponent<Transform>();
@@ -17,4 +19,5 @@ public class Controla_Inimigo : MonoBehaviour
     {
         
     }
+
 }
