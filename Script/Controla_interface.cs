@@ -12,10 +12,7 @@ public class Controla_interface : MonoBehaviour
     public UnityEngine.UI.Button botao;
     public float tempo = 100f;
     public Text texto ;
-    private bool paraTempo;
-    void awake(){
-
-    }
+    
     void Start()
     {
         Poder.SetActive(false);
@@ -25,13 +22,13 @@ public class Controla_interface : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       ContaTempo();
+       tempo = tempo - Time.deltaTime;
+        texto.text = "Tempo é : " + tempo.ToString("0");
       
         
     }
     public void OnButtonClick(){
         if(!Poder.activeSelf){
-            
             Poder.SetActive(true);
         
         } 
@@ -47,16 +44,5 @@ public class Controla_interface : MonoBehaviour
         }
 
     }
-    private void ContaTempo(){
-        if(paraTempo==true){
-         tempo = tempo - Time.deltaTime;
-        texto.text = "Tempo é : " + tempo.ToString("0");
-        if(tempo<=0){
-            paraTempo = false;
-            destativaPoder();
-        }
-        }
-        
 
-    }
 }
